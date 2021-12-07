@@ -1,21 +1,12 @@
 package com.cleanwk.bean.factory;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.cleanwk.bean.BeansException;
 
 /**
  * @author cleanwk
  * @date 2021/12/7
  */
-public class BeanFactory {
+public interface BeanFactory {
 
-    private Map<String,Object> beanMap = new HashMap<>();
-
-    public void registerBean(String name,Object bean){
-        beanMap.put(name,bean);
-    }
-
-    public Object getBean(String name){
-        return beanMap.get(name);
-    }
+    Object getBean(String name) throws BeansException;
 }
